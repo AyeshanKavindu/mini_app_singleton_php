@@ -1,10 +1,10 @@
 <?php
 
 require_once "classes/Database.php";
-require_once "classes/Product.php";
+require_once "classes/Movie.php";
 
 
-$products = Product::findAllProduct();
+$movies = Movie::findAll();
 
 require_once "templates/header.php";
 ?>
@@ -12,12 +12,15 @@ require_once "templates/header.php";
 
 <h1>Mini PHP App with classes</h1>
 <section>
-
-    <?php foreach ($products as $product): ?>
+    <?php foreach ($movies as $movie): ?>
         <article>
-            <?php /** @var Product $product */ ?>
-            <h2><?=htmlentities($product->getName()); ?></h2>
-            <p><a href="product_detail.php?id=<?=htmlentities($product->getId()); ?>">Read More</a></p>
+            <?php /** @var Movie $movie */ ?>
+            <h2><?= htmlentities($movie->getTitle()); ?></h2>
+            <p>
+                <a href="movie_detail.php?id=<?= htmlentities($movie->getId()); ?>">
+                    Read More
+                </a>
+            </p>
         </article>
     <?php endforeach; ?>
 </section>
