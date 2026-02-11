@@ -20,7 +20,7 @@ require_once "templates/header.php";
             <p><?=htmlentities($product->getDescription())?></p>
 
         <?php else: ?>
-            <h1>Product not foud</h1>
+            <h1>Product not found</h1>
         <?php endif; ?>
 </section>
 <?php require_once "templates/footer.php";
