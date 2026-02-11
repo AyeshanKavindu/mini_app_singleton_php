@@ -2,6 +2,7 @@
 
 require_once "classes/Database.php";
 require_once "classes/Movie.php";
+require_once "classes/Director.php";
 
 
 $movies = Movie::findAll();
